@@ -1,0 +1,56 @@
+<div>
+
+  <p-tabView>
+    <p-tabPanel header="Смена пароля">
+      <ng-template pTemplate="content">
+        <div class="mx-5 d-flex flex-column col-8 settings-input justify-content-center">
+
+          <div>
+            <span>Введите текущий пароль</span>
+            <input type="password" class="mt-3"
+                   pInputText
+                   [ngClass]="{'input-error': !pswUser}"
+                   [(ngModel)]="pswUser"/>
+          </div>
+
+          <div>
+            <span>Новый пароль</span>
+            <input type="password"
+                   class="mt-3"
+                   pInputText
+                   [ngClass]="{'input-error': !newPsw}"
+                   [(ngModel)]="newPsw"/>
+          </div>
+
+          <div>
+            <span>Подтверждение нового пароля</span>
+            <input type="password"
+                   class="mt-3"
+                   pInputText
+                   [ngClass]="{'input-error': !rptNewPsw}"
+                   [(ngModel)]="rptNewPsw"/>
+          </div>
+
+        </div>
+
+        <div class="mx-4 d-flex">
+          <button  [disabled]="!pswUser || !newPsw || !rptNewPsw"
+                   pButton (click)="onPswChange($event)" type="button"
+                   class="btn mx-3 mt-5">Сменить пароль</button>
+        </div>
+
+      </ng-template>
+    </p-tabPanel>
+
+    <p-tabPanel  header="Статистика">
+      <ng-template pTemplate="content">
+        <app-statistic></app-statistic>
+      </ng-template>
+    </p-tabPanel>
+
+
+      </p-tabView>
+
+</div>
+
+<p-toast position="top-left"></p-toast>

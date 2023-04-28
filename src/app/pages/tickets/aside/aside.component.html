@@ -1,0 +1,26 @@
+<div>
+  <p-dropdown [options]="menuTypes"
+              [(ngModel)]="selectedMenuType"
+              optionLabel="label"
+              (onChange)="changeType($event)">
+  </p-dropdown>
+</div>
+<!--Добавлен новый список-->
+<div class="mt-3">
+  <p-dropdown class="mt-3"
+              [options]="tourTypes"
+              optionLabel="label"
+              (onChange)="changeTourType($event)">
+  </p-dropdown>
+</div>
+
+<div class="mt-3">
+  <p-calendar (onSelect)="selectDate($event)" ></p-calendar>
+</div>
+
+<div class="mt-3">
+  <button class="btn btn-danger" (click)="initRestError()" >Запрос с ошибкой</button>
+</div>
+<div class="mt-3">
+  <button class="btn btn-sm" (click)="initSettingsData()" type="button">Обновить настройки</button>
+</div>

@@ -1,0 +1,19 @@
+<div class="d-flex flex-column h-100">
+
+  <header>
+      <app-header [menuType] = "selectedType"></app-header>
+  </header>
+
+<div class="main-content">
+  <div class="overflow-auto h-100 w-100">
+    <router-outlet></router-outlet>
+  </div>
+  <app-aside (updateMenuType)="updateSelectedType($event)"></app-aside>
+</div>
+
+
+<footer>
+<app-footer></app-footer>
+</footer>
+</div>
+<p-toast position="top-left"></p-toast>
